@@ -54,6 +54,7 @@
 
 #sidePic > img{
     height: 100px;
+    width: 150px;
     display: block;
 }
 
@@ -67,4 +68,15 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
+}
+
+#carosello .btn{
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding-inline: 10px;
+    padding-block: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
