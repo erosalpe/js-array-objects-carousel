@@ -15,12 +15,12 @@ const arrayImmagini = [
     },
     {
         immagine: "great-landscape-hd-wallpaper-preview.jpg",
-        titolo: "Paesaggio Ai",
+        titolo: "Paesaggio Ai N.1",
         descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
         immagine: "landscape-view-green.jpg",
-        titolo: "Paesaggio Ai",
+        titolo: "Paesaggio Ai N.2",
         descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
 ];
