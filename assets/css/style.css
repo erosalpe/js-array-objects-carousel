@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.photoNav{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carosello{
+    width: 600px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#carosello figure > img{
+    width: 600px;
+    display: block;
+    
+}
+
+#carosello figure{
+    width: 600px;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+
+.active{
+    display: block;
+}
+
+.none{
+    display: none;
+}
+
+#carosello .bottoni{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+}
+
+.photoNav{
+    display: flex;
+}
+
+#sidePic > img{
+    height: 100px;
+    display: block;
+}
+
+.suggested{
+    display: flex;
+    flex-direction: column;
+}
+
+#carouselAutoButtons{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
