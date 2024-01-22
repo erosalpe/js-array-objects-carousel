@@ -1,7 +1,6 @@
 const nextPhoto = document.getElementById("btnR");
 const prevPhoto = document.getElementById("btnL");
-const magicRun = document.getElementById("autoRun");
-const stopMagicRun = document.getElementById("stopAutoRun");
+const stopAutoRunHtml = document.getElementById("stopAutoRun");
 let contatoreCarosello = 0;
 const arrayImmagini = [
     {
@@ -66,6 +65,37 @@ for(let i = 0; i < arrayImmagini.length; i++){
     ;
 
 };
+
+
+
+function slideshow(){
+    const arrayImmaginiPagina = document.querySelectorAll("div.scheda");
+    if(contatoreCarosello < arrayImmagini.length - 1){
+        arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
+        arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+        contatoreCarosello++;
+        arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
+        arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+        console.log(contatoreCarosello);
+    } else {
+        arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
+        arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+        contatoreCarosello = 0;
+        arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
+        arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+    }
+}
+
+let a
+
+autoRunHtml.addEventListener("click", function(){
+    a = setInterval(slideshow, 3000);
+})
+
+stopAutoRunHtml.addEventListener("click", function(){
+    clearInterval(a);
+})
+
 
 
 
