@@ -57,12 +57,22 @@ for(let i = 0; i < arrayImmagini.length; i++){
         ;
     }
 
-    suggestedHtml.innerHTML += `
-        <figure id="sidePic">
+    if (i === 0){
+        suggestedHtml.innerHTML += `
+            <figure id="sidePic" class="activeSide">
+                <img src='./assets/img/${arrayImmagini[i].immagine}'>
+            </figure>
+            `
+        ;
+    } else {
+        suggestedHtml.innerHTML += `
+        <figure id="sidePic" class="noneSide">
             <img src='./assets/img/${arrayImmagini[i].immagine}'>
         </figure>
         `
     ;
+    }
+    
 
 };
 
@@ -70,19 +80,36 @@ for(let i = 0; i < arrayImmagini.length; i++){
 
 function slideshow(){
     const arrayImmaginiPagina = document.querySelectorAll("div.scheda");
+    const arrayImmaginiSide = document.querySelectorAll("#sidePic");
+    console.log(arrayImmaginiSide);
     if(contatoreCarosello < arrayImmagini.length - 1){
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
+
         contatoreCarosello++;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
+
         console.log(contatoreCarosello);
     } else {
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
+
         contatoreCarosello = 0;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
     }
 }
 
@@ -101,37 +128,66 @@ stopAutoRunHtml.addEventListener("click", function(){
 
 nextPhoto.addEventListener("click", function(){
     const arrayImmaginiPagina = document.querySelectorAll("div.scheda");
+    const arrayImmaginiSide = document.querySelectorAll("#sidePic");
     if(contatoreCarosello < arrayImmagini.length - 1){
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
+
         contatoreCarosello++;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
         console.log(contatoreCarosello);
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
+
     } else {
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
+
         contatoreCarosello = 0;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
     }
     
 })
 
 prevPhoto.addEventListener("click", function(){
     const arrayImmaginiPagina = document.querySelectorAll("div.scheda");
+    const arrayImmaginiSide = document.querySelectorAll("#sidePic");
     if(contatoreCarosello === 0){
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
         contatoreCarosello = arrayImmagini.length - 1;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
         console.log(contatoreCarosello);
     } else {
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.add( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.add( "noneSide" );
         contatoreCarosello--;
         arrayImmaginiPagina[contatoreCarosello].classList.add( "active" );
         arrayImmaginiPagina[contatoreCarosello].classList.remove( "none" );
+
+        arrayImmaginiSide[contatoreCarosello].classList.add( "activeSide" );
+        arrayImmaginiSide[contatoreCarosello].classList.remove( "noneSide" );
     }
 })
